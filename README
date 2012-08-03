@@ -1,0 +1,23 @@
+This is a C extension for PHP that supplys very fast BB code parsing.
+
+It can also ported to other languages. The C source files can used without any changes in C/C++ applications.
+
+------------
+Installation
+------------
+phpize
+./configure
+make
+make install
+
+----------
+Known bugs
+----------
+It seems that something in the PHP wrapper is invalid. Got segfaults in production use somethimes.
+When some PHP extension gurus are around somewhere...
+
+-----
+Usage
+-----
+Have a look at test.php and test.txt for PHP examples.
+Or have a look at lib/ubb.c at main() function.

@@ -1,0 +1,79 @@
+
+
+
+resource ubb_init();
+
+Initializes a new BB handle.
+
+
+
+ubb_free();
+
+Deletes a BB handle.
+
+
+
+resource ubb_pinit($name, &$cached);
+
+Initializes a persistent BB handle.
+
+$name - name of this BB handle.
+$cached - is set to TRUE when handle is already created, otherwise FALSE.
+
+
+
+ubb_free();
+
+Deletes a BB handle.
+On persistent handles it only removes the resource. The next call to ubb_pinit() will return the already created handle.
+
+
+
+ubb_pfree();
+
+Deletes a BB handle, when it is persistent it is also removed from persistent handle cache.
+
+
+
+ubb_group_del($ubb, $group);
+
+$ubb - BB handle.
+$group - Name of the group to delete.
+
+
+
+ubb_single_add($ubb, $group, $name, $is_regex, $priority, $function, $arg1, ...);
+
+$ubb - BB handle.
+$group - Group name $name belongs to.
+$name - Name of this single parse (eg. smileys or a regex pattern). Note: The regex pattern must be PCRE compatible.
+$is_regex - Wether $name is a regex pattern.
+$priority - Priority of this parse. Higher priority is stronger.
+$filter - Filter for child elements (see filter usage).
+$function - Function this block will call (see block functions)
+$arg1 ... - Arguments passed to $function
+
+
+
+ubb_single_del($ubb, $name);
+
+
+
+ubb_block_add($ubb, $group, $name, $filter, $function, $arg1, ...);
+
+$ubb - BB handle.
+$group - Group name $name belongs to
+$name - Name of this block (eg. b for [b]bold text[/b])
+$filter - Filter for child elements (see filter usage)
+$function - Function this block will call (see block functions)
+$arg1 ... - Arguments passed to $function
+
+
+
+ubb_block_del($ubb, $name);
+
+
+
+ubb_parse($ubb, $data);
+
+
